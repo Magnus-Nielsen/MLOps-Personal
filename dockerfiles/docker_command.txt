@@ -24,3 +24,6 @@ IF EXIST "%cd%\data\processed\train_images.pt" (
 Mount network drive in wsl:
 
 open terminal -> go to wsl with 'wsl', then 'sudo mount -t drvfs H: /mnt/h'
+
+docker build -f wandb.dockerfile . -t wandb:latest
+docker run -e WANDB_API_KEY=<API_KEY> wandb:latest

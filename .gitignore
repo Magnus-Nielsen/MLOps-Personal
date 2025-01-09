@@ -182,3 +182,8 @@ data/*
 sessions/1/corrupted_mnist/data/*
 models/*
 sessions/1/corrupted_mnist/model.pth
+.env
+src/corrupted_mnist/wandb/*
+wandb/*
+reports/figures/*
+artifacts/*

@@ -1,0 +1,18 @@
+program: src/corrupted_mnist/train_wandb.py
+name: corrupted_mnist_sweep
+project: MLOPS  # change this
+entity: advanced-deep-learning-course  # change this
+method: bayes
+metric:
+    goal: maximize
+    name: accuracy
+parameters:
+    lr:
+        min: 0.0001
+        max: 0.1
+        distribution: log_uniform_values
+    batch-size:
+        values: [16, 32, 64]
+    epochs:
+        values: [2,3,4]
+run_cap: 3
