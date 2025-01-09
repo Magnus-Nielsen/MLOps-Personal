@@ -1,0 +1,26 @@
+# Building
+docker build -f dockerfiles/train.dockerfile . -t train:latest
+docker build -f dockerfiles/evaluate.dockerfile . -t evaluate:latest
+
+# Run docker with copy of folders
+docker run --name train_1 train:latest
+docker cp train_1:/models/model.pt %cd%/models/model.pt
+docker cp train_1:/reports/figures/training_statistics.png %cd%/reports/figures/training_statistics.png
+
+docker run -v %cd%/models/:/models/ -v c:/users/wkg579/desktop/data/processed/:/data/processed/ -v %cd%/reports/:/reports/ train_mount:latest
+
+docker run --name evaluate_3 evaluate:latest ../../models/model.pt
+
+# Run docker with mounted volume, does not work with network drive files
+docker run -v %cd%/models/:/models/ -v c:/users/wkg579/desktop/data/processed/:/data/processed/ -v %cd%/reports/:/reports/ train_mount:latest
+
+IF EXIST "%cd%\data\processed\train_images.pt" (
+  echo File exists
+) ELSE (
+  echo File does not exist
+)
+
+
+Mount network drive in wsl:
+
+open terminal -> go to wsl with 'wsl', then 'sudo mount -t drvfs H: /mnt/h'
