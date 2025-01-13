@@ -1,6 +1,6 @@
 # corrupted_mnist
 
-Predict MNIST digits based on corrupted input for DTU MLOps course
+Predict MNIST digits based on corrupted input for DTU MLOps course. Includes tests of various worktools such as docker and wandb.
 
 ## Project structure
 
