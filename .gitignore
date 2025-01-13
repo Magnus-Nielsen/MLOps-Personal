@@ -187,3 +187,4 @@ src/corrupted_mnist/wandb/*
 wandb/*
 reports/figures/*
 artifacts/*
+commands/*
