@@ -28,7 +28,7 @@ class ConvNet(nn.Module):
         x = torch.max_pool2d(x, 2, 2)
         x = torch.flatten(x, 1)
         x = self.dropout(x)
-        return self.fc1(x)
+        return self.fc1(x).unsqueeze(1)
 
 
 if __name__ == "__main__":
