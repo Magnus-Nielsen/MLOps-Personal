@@ -16,7 +16,6 @@ colorama==0.4.6
 comm==0.2.2
 contourpy==1.3.1
 cookiecutter==2.6.0
--e git+https://github.com/Magnus-Nielsen/MLOps-Personal.git@e1d735520924ca67882f2c78d8c265ba28248574#egg=corrupted_mnist
 coverage==7.6.10
 cycler==0.12.1
 debugpy==1.8.11
