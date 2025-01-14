@@ -188,3 +188,4 @@ wandb/*
 reports/figures/*
 artifacts/*
 commands/*
+/data
